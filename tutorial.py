@@ -1,7 +1,7 @@
 import pymongo
 
 my_client = pymongo.MongoClient(
-    'mongodb+srv://alice:myPassword@mylittlecluster-qsart.gcp.mongodb.net/test?retryWrites=true'
+    'YOUR_CONNECTION_STRING'
 )
 
 try:
