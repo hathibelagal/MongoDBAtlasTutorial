@@ -15,6 +15,8 @@ my_database = my_client.test
 
 my_collection = my_database.foods
 
+# Insert examples
+
 try:
     my_collection.insert_one({
         "_id": 1,
@@ -43,6 +45,8 @@ try:
     ])
 except:
     print("Documents exist already")
+
+# Query examples
 
 my_cursor = my_collection.find()
 
@@ -82,6 +86,7 @@ for item in my_cursor:
 #	Name: hamburger, Trans fats: 0.80
 #	Name: taco, Trans fats: 0.50
 
+# Update example
 
 my_collection.update_one(
     { "name": "taco" }, # query
@@ -98,6 +103,8 @@ my_cursor = my_collection.find({"name": "taco"})
 for item in my_cursor:
     print("Name: %s, Sugar: %.2f, Fiber: %.2f" % 
         (item["name"], item["sugar"], item["fiber"]))
+
+# Delete example
 
 my_collection.delete_many({
     "calories": {
